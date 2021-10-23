@@ -1,0 +1,76 @@
+<div class="container"> 
+    <div class="col-md-12">  
+        <div class="col-md-4">      
+
+        </div>
+        <div class="col-md-8"> 
+            <div class="portlet light bordered">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption caption-md">
+                        <i class="icon-globe theme-font hide"></i>
+                        <span class="caption-subject font-blue-madison bold uppercase">New club info</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div>
+                    
+
+                    
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="home">
+                                <form #addForm="ngForm" (ngSubmit)="onAdd(addForm)">
+                                  <div class="form-group">
+                                    <label for="inputName">Club name</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="name" name="name">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">Club code</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="clubCode" name="clubCode">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">Year of foundation</label>
+                                    <input type="number" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="yearOfFoundation" name="yearOfFoundation">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">City</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="city" name="city">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">Country code</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="countryCode" name="countryCode">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">Position</label>
+                                    <input type="number" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="position" name="position">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="inputName">League code</label>
+                                    <input type="text" class="form-control" id="inputName"  placeholder="Club name" value="{{club?.name}}" [(ngModel)]="leagueCode" name="leagueCode">
+                                  </div>
+
+                                  <div class="checkbox">
+                                    <label>
+                                      <input type="checkbox" [(ngModel)]="active" name="active"> Active?
+                                    </label>
+                                  </div>
+                                  <div class="row">
+                                    <div class="text-center px-xl-3">
+                                        <button class="btn btn-success btn-block" type="submit" data-toggle="modal" data-target="#user-form-modal">Submit</button>
+                                    </div>
+                                    <div class="text-center px-xl-3">
+                                        <a routerLink = "/club" class="btn btn-success btn-block" style="background-color: gray" data-toggle="modal" data-target="#user-form-modal">Back</a>
+                                    </div>
+                                  </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>

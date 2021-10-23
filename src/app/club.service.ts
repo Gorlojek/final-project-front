@@ -28,5 +28,9 @@ export class ClubService {
   public deleteClub(clubId: number): Observable<void>{
     return this.http.delete<void>(`${this.apiServerUrl}/club/delete/${clubId}`);
   }
+  public getClub(clubId: number): Observable<Club>{
+    return this.http.get<Club>(`${this.apiServerUrl}/club/find/${clubId}`);
+  }
 
+  
 }

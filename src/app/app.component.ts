@@ -1,6 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Club } from './club';
+
+import { Component, OnInit,  } from '@angular/core';
+
 
 import { ClubService } from './club.service';
 
@@ -10,22 +10,14 @@ import { ClubService } from './club.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  public clubs: Club[] = []; 
+  public title: string = 'DUPA';
 
-  constructor(private clubService: ClubService) { }
+  constructor() { }
 
   ngOnInit(){
-    this.getClubs();
+
   }
 
-  public getClubs(): void {
-    this.clubService.getClubs().subscribe(
-      (response: Club[]) => {
-        this.clubs = response;
-      },
-      (error: HttpErrorResponse)=>{
-        alert(error.message);
-      }
-    )
-  }
-}
+  
+ }
+

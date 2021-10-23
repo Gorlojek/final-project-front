@@ -1,0 +1,66 @@
+<div class="container bootstrap snippets bootdey">
+    <nav class = "navbar">
+        <input class="form-control" type="text" name="clubName"  (ngModelChange)="search()" placeholder="Enter club name to search">
+    </nav>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="main-box no-header clearfix">
+                <div class="main-box-body clearfix">
+                    <div class="table-responsive">
+                        <table class="table user-list">
+                            <thead>
+                                <tr>
+                                <th><span>Club name</span></th>
+                                <th><span>Year of foundation</span></th>
+                                <th class="text-center"><span>Is active?</span></th>
+                                <th><span>City</span></th>
+                                <span>
+                                <div class="text-center px-xl-3">
+                                    <a routerLink="/club/add" class="btn btn-success btn-block" type="button" data-toggle="modal" data-target="#user-form-modal">Add club</a>
+                                </div>
+                                </span>
+                                <th>&nbsp;</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let club of clubs" class="col-md-6 col-xl-3">
+                                <tr>
+                                    <td>
+                                        <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+                                        <a href="#" class="user-link">{{club?.name}}</a>
+                                    </td>
+                                    <td>{{club?.yearOfFoundation}}</td>
+                                    <td class="text-center">
+                                        <span class="label label-default">{{club?.active}}</span>
+                                    </td>
+                                    <td>
+                                        <a href="#">{{club?.city}}</a>
+                                    </td>
+                                    <td style="width: 20%;">
+                                        <a  href="/club/details/{{club?.id}}" class="table-link text-warning">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="/club/edit/{{club?.id}}" class="table-link text-info">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                        <a href="/club/delete/{{club?.id}}" class="table-link danger">
+                                            <span class="fa-stack">
+                                                <i class="fa fa-square fa-stack-2x"></i>
+                                                <i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

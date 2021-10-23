@@ -1,4 +1,5 @@
 export interface Club{
+    clubName: any;
     id: number;
     points: number;
     name: string;
@@ -7,5 +8,6 @@ export interface Club{
     countryCode: string;
     position: number;
     leagueCode: string;
-    active: boolean;   
+    active: boolean;
+    clubCode: string;   
 } 
