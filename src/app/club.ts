@@ -1,5 +1,5 @@
 export interface Club{
-    clubName: any;
+    
     id: number;
     points: number;
     name: string;

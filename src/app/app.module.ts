@@ -16,6 +16,7 @@ import { ClubDeleteComponent } from './club-crud/club-delete/club-delete.compone
 import { AddClubComponent } from './club-crud/add-club/add-club.component';
 import { ClubDetailsComponent } from './club-crud/club-details/club-details.component';
 import { RouterModule } from '@angular/router';
+import { LeagueAllComponent } from './league-crud/league-all/league-all.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { RouterModule } from '@angular/router';
     AddClubComponent,
     ClubDetailsComponent,
     ClubUpdateComponent,
-    ClubComponent
+    ClubComponent,
+    LeagueAllComponent
   ],
   imports: [
     BrowserModule,
