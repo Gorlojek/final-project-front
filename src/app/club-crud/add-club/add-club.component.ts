@@ -27,7 +27,7 @@ export class AddClubComponent implements OnInit {
   ngOnInit(): void {
   }
   public addClub(club: Club): void{
-    this.clubService.updateClub(club).subscribe(
+    this.clubService.addClub(club).subscribe(
       (response: Club) => {
         this.club = response;
 

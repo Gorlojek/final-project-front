@@ -1,6 +1,6 @@
 <div class="container bootstrap snippets bootdey">
     <nav class = "navbar">
-        <input class="form-control" type="text" name="clubName"  (ngModelChange)="search()" placeholder="Enter club name to search">
+        <input class="form-control" type="text" name="clubName" [(ngModel)]="clubName"  (ngModelChange)="search()" placeholder="Enter club name to search">
     </nav>
     <div class="row">
         <div class="col-lg-12">
@@ -10,8 +10,8 @@
                         <table class="table user-list">
                             <thead>
                                 <tr>
-                                <th><span>Club name</span></th>
-                                <th><span>Year of foundation</span></th>
+                                <th (click)="sort('clubName')" class ="fa fa-sort"><span>Club name</span></th>
+                                <th (click)="sort('yearOfFoundation')" class ="fa fa-sort"><span>Year of foundation</span></th>
                                 <th class="text-center"><span>Is active?</span></th>
                                 <th><span>City</span></th>
                                 <span>
@@ -22,8 +22,8 @@
                                 <th>&nbsp;</th>
                                 </tr>
                             </thead>
-                            <tbody *ngFor="let club of clubs" class="col-md-6 col-xl-3">
-                                <tr>
+                            <tbody class="col-md-6 col-xl-3">
+                                <tr *ngFor="let club of clubs | orderBy: key: reverse | paginate: {itemsPerPage: 5, currentPage:p}">
                                     <td>
                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
                                         <a href="#" class="user-link">{{club?.name}}</a>
@@ -55,7 +55,9 @@
                                             </span>
                                         </a>
                                     </td>
+                                    
                                 </tr>
+                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
                             </tbody>
                         </table>
                     </div>

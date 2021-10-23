@@ -3,6 +3,7 @@ import { Component, OnInit,  } from '@angular/core';
 
 
 import { ClubService } from './club.service';
+import { NgpSortModule } from "ngp-sort-pipe";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { ClubService } from './club.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{
-  public title: string = 'DUPA';
+  public title: string = 'Polish CLubs Aps';
 
   constructor() { }
 

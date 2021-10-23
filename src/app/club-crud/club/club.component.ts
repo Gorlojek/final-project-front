@@ -3,6 +3,7 @@ import { Component, Input, NgZone, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Club } from '../../club';
 import { ClubService } from '../../club.service';
+import { NgpSortModule } from "ngp-sort-pipe";
 
 
 @Component({
@@ -11,19 +12,16 @@ import { ClubService } from '../../club.service';
   styleUrls: ['./club.component.css']
 })
 export class ClubComponent implements OnInit {
-  private clubName: string = '';
+  p: number = 1;
+  @Input() clubName: any;
   public clubs: Club[] = []; 
   private clubId: number = 0;
-  constructor(private clubService: ClubService,
-    private route: ActivatedRoute,
-    private router: Router,
-    private ngZone: NgZone) { }
+  constructor(private clubService: ClubService) { }
 
   ngOnInit(){ 
   this.getClubs();
-
   
-  console.log(this.clubs);
+
   
 
   }
@@ -57,16 +55,29 @@ onDelete(){
 }
 
 search(){
-  console.log(this.clubName);
-  
-  if(this.clubName=""){
+  if(this.clubName == ""){
     this.ngOnInit();
+  }else{
+    this.clubs = this.clubs.filter(res => {
+
+      return res.name.toLocaleLowerCase().match(this.clubName.toLocaleLowerCase());
+    }
+    )
   }
-  {
-    this.clubs = this.clubs.filter(res =>{
-      console.log(this.clubName)
-    })
+}
+key = 'name';
+reverse: boolean= false; 
+sort(key: string){
+  this.key=key;
+  this.reverse = !this.reverse;
+  console.log(this.clubs);
+  
+  if(this.reverse){
+    this.clubs = this.clubs.sort();
+  }else{
+    this.clubs = this.clubs.reverse();
   }
+
 }
 }
 
