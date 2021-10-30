@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { League } from 'src/app/league';
 import { LeagueService } from 'src/app/league.service';
 
@@ -9,11 +10,13 @@ import { LeagueService } from 'src/app/league.service';
   styleUrls: ['./league-all.component.css']
 })
 export class LeagueAllComponent implements OnInit {
+  @ViewChild('myModel') myModel: any;
   public leagues: League[] = []; 
   constructor(private leagueService: LeagueService) { }
 
   ngOnInit(): void {
     this.getLeagues();
+    
   }
   public getLeagues(): void {
     this.leagueService.getLeagues().subscribe(
@@ -25,4 +28,14 @@ export class LeagueAllComponent implements OnInit {
     )
   }
 
+  onAddLeague(addForm: NgForm){
+
+  }
+
+  public openModel() {
+    this.myModel.nativeElement.className = 'modal fade show';
+  }
+  closeModel() {
+    this.myModel.nativeElement.className = 'modal hide';
+ }
 }

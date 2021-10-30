@@ -16,20 +16,20 @@ export class LeagueService {
 
 
   public getLeagues(): Observable<League[]>{
-    return this.http.get<League[]>(`${this.apiServerUrl}/club/all`);
+    return this.http.get<League[]>(`${this.apiServerUrl}/league/all`);
   }
   public addLeague(club: League): Observable<League>{
-    return this.http.post<League>(`${this.apiServerUrl}/club/add`, club);
+    return this.http.post<League>(`${this.apiServerUrl}/league/add`, club);
   }
   public updateLeague(club: League): Observable<League>{
-    return this.http.put<League>(`${this.apiServerUrl}/club/update`, club);
+    return this.http.put<League>(`${this.apiServerUrl}/league/update`, club);
   }
 
   public deleteLeague(clubId: number): Observable<void>{
-    return this.http.delete<void>(`${this.apiServerUrl}/club/delete/${clubId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/league/delete/${clubId}`);
   }
   public getLeague(clubId: number): Observable<League>{
-    return this.http.get<League>(`${this.apiServerUrl}/club/find/${clubId}`);
+    return this.http.get<League>(`${this.apiServerUrl}/league/find/${clubId}`);
   }
 
   

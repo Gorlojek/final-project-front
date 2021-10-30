@@ -8,6 +8,7 @@ import { NgpSortModule } from "ngp-sort-pipe";
 import { OrderModule } from 'ngx-order-pipe';
 import { NgxPaginationModule } from 'ngx-pagination'; 
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ClubUpdateComponent } from './club-crud/club-update/club-update.component';
@@ -17,6 +18,8 @@ import { AddClubComponent } from './club-crud/add-club/add-club.component';
 import { ClubDetailsComponent } from './club-crud/club-details/club-details.component';
 import { RouterModule } from '@angular/router';
 import { LeagueAllComponent } from './league-crud/league-all/league-all.component';
+import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -26,7 +29,8 @@ import { LeagueAllComponent } from './league-crud/league-all/league-all.componen
     ClubDetailsComponent,
     ClubUpdateComponent,
     ClubComponent,
-    LeagueAllComponent
+    LeagueAllComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +40,8 @@ import { LeagueAllComponent } from './league-crud/league-all/league-all.componen
     Ng2SearchPipeModule,RouterModule,
     NgpSortModule,
     OrderModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
